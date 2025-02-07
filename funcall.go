@@ -7,7 +7,7 @@ import (
 	"net/http"
 
 	"github.com/GoogleCloudPlatform/functions-framework-go/functions"
-	releasenotes "github.com/mpolski/gemini-function-calling/pkg/fetch"
+	_ "github.com/mpolski/gemini-function-calling/pkg/fetch"
 )
 
 func init() {
