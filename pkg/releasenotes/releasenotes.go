@@ -3,6 +3,7 @@ package releasenotes
 import (
 	"context"
 	"fmt"
+	"os"
 
 	"cloud.google.com/go/bigquery"
 	"google.golang.org/api/iterator"
@@ -12,7 +13,12 @@ import (
 //
 // The function returns a slice of ReleaseNote structs containing the release
 // note type and description, or an error if any occurs during the process.
-func GetReleaseNotes(ctx context.Context, projectID string, product string, releaseNoteType string) ([]ReleaseNote, error) {
+func GetReleaseNotes(ctx context.Context, product string, releaseNoteType string) ([]ReleaseNote, error) {
+
+	projectID := os.Getenv("PROJECT_ID")
+	if projectID == "" {
+		fmt.Println("Set PROJET_ID= in environment variables")
+	}
 
 	// Create a BigQuery client to interact with the BigQuery service.
 	client, err := bigquery.NewClient(ctx, projectID)
