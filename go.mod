@@ -4,6 +4,7 @@ go 1.22.12
 
 require (
 	cloud.google.com/go/bigquery v1.66.2
+	github.com/GoogleCloudPlatform/functions-framework-go v1.9.1
 	google.golang.org/api v0.220.0
 )
 
@@ -14,9 +15,9 @@ require (
 	cloud.google.com/go/compute/metadata v0.6.0 // indirect
 	cloud.google.com/go/functions v1.19.3 // indirect
 	cloud.google.com/go/iam v1.3.1 // indirect
-	github.com/GoogleCloudPlatform/functions-framework-go v1.9.1 // indirect
 	github.com/apache/arrow/go/v15 v15.0.2 // indirect
 	github.com/cloudevents/sdk-go/v2 v2.15.2 // indirect
+	github.com/envoyproxy/go-control-plane/envoy v1.32.4 // indirect
 	github.com/felixge/httpsnoop v1.0.4 // indirect
 	github.com/go-logr/logr v1.4.2 // indirect
 	github.com/go-logr/stdr v1.2.2 // indirect

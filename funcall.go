@@ -1,4 +1,4 @@
-package funcall
+package function
 
 import (
 	"context"
@@ -6,16 +6,15 @@ import (
 	"fmt"
 	"net/http"
 
-	releasenotes "github.com/mpolski/gemini-function-calling/pkg/fetch"
-
 	"github.com/GoogleCloudPlatform/functions-framework-go/functions"
+	releasenotes "github.com/mpolski/gemini-function-calling/pkg/fetch"
 )
 
 func init() {
-	functions.HTTP("funcall", funcall)
+	functions.HTTP("notes", fetch)
 }
 
-func funcall(w http.ResponseWriter, r *http.Request) {
+func fetch(w http.ResponseWriter, r *http.Request) {
 
 	ctx := context.Background()
 

@@ -5,6 +5,7 @@ import (
 	"os"
 
 	"github.com/GoogleCloudPlatform/functions-framework-go/funcframework"
+	_ "github.com/mpolski/gemini-function-calling"
 )
 
 func main() {
