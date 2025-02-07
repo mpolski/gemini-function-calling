@@ -6,8 +6,9 @@ import (
 	"fmt"
 	"net/http"
 
+	releasenotes "github.com/mpolski/gemini-function-calling/pkg/fetch"
+
 	"github.com/GoogleCloudPlatform/functions-framework-go/functions"
-	_ "github.com/mpolski/gemini-function-calling/pkg/fetch"
 )
 
 func init() {
@@ -19,7 +20,7 @@ func funcall(w http.ResponseWriter, r *http.Request) {
 	ctx := context.Background()
 
 	// function to run GetReleaseNotes
-	fmt.Println("Calling GetReleaseNotes function...")
+	fmt.Println("Calling FetchReleaseNotes function...")
 	releaseNotes, err := releasenotes.FetchReleaseNotes(ctx, "Compute Engine", "FEATURE")
 	if err != nil {
 		http.Error(w, fmt.Sprintf("Error calling GetReleaseNotes: %v", err), http.StatusInternalServerError)
